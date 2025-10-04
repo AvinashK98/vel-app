@@ -13,7 +13,7 @@ pipeline {
     } 
     stage ("two") {
     steps{
-        sh "docker run -dp 90:80 --name c2 httpd"
+        sh "docker run -dp 50:80 --name c2 httpd"
         sh "dcker cp /mnt/21q1Branch/index.html c2:/usr/local/apache2/htdocs"
         sh "docker exec c2 chmod -R 777 /usr/local/apache2/htdocs"
     }
