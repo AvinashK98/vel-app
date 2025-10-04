@@ -11,8 +11,7 @@ pipeline {
         echo "This is main branch"
       }
     } 
-  } 
-  stage("two"){
+    stage ("two") {
     steps{
         sh "docker run -dp 90:80 --name c1 httpd"
         sh "dcker cp /mnt/mainBranch/index.html c1:/usr/local/apache2/htdocs"
@@ -20,4 +19,6 @@ pipeline {
     }
 
   }
+  } 
+  
 }
