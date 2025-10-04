@@ -1,17 +1,15 @@
 pipeline { 
-  
   agent { 
-    label {
-      label "Slave-1"
+    label { 
+      label "Slave-1" 
       customWorkspace "/mnt/slave-1" 
     } 
-  
-  }
-  stages { 
-    stage ("one") { 
+  } 
+  stages{ 
+    stage ("one")  { 
       steps { 
-        echo "This is master branch" 
-      } 
+        echo "This is 23q1 branch"
+      }
     } 
   } 
 }
