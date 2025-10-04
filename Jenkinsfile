@@ -13,6 +13,8 @@ pipeline {
     } 
     stage ("two") {
     steps{
+        sh "docker kill c2"
+        sh "docker system prune -fa"
         sh "docker run -dp 50:80 --name c2 httpd"
         sh "docker cp /mnt/21q1Branch/index.html c2:/usr/local/apache2/htdocs"
         sh "docker exec c2 chmod -R 777 /usr/local/apache2/htdocs"
